@@ -9,7 +9,7 @@ telescope.setup({
 	defaults = {
 		prompt_prefix = ' ',
 		selection_caret = ' ',
-		file_ignore_patterns = { 'node_modules', 'yarn.lock' },
+		file_ignore_patterns = { 'node_modules', 'yarn.lock', '.yarn/cache', '.git/', 'dist/', '.next/' },
 		dynamic_preview_title = true,
 		mappings = {
 			i = {
@@ -26,6 +26,7 @@ telescope.setup({
 	},
 	extensions = {
 		file_browser = {
+			initial_mode = 'normal',
 			grouped = true,
 			hijack_netrw = true,
 			hidden = true,
@@ -34,6 +35,8 @@ telescope.setup({
 	pickers = {
 		find_files = {
 			find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' }, --removes the ../ prefix
+			hidden = true,
+			no_ignore = true,
 		},
 	},
 })

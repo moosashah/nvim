@@ -1,15 +1,29 @@
 -- local colorscheme = 'onedarker'
-local colorscheme = "tokyonight"
+local colorscheme = 'tokyonight'
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
+local colorscheme_status_ok, tokyonight = pcall(require, 'tokyonight')
+if not colorscheme_status_ok then
+	print 'no color scheme sadge'
 	return
 end
 
--- Example config in Lua
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+tokyonight.setup({
+	style = 'day',
+	styles = {
+		functions = { italic = true },
+		variables = { italic = true },
+	},
+	sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
+	day_brightness = 0.5,
+	hide_inactive_statusline = true,
+	dim_inactive = true,
+	on_colors = function(colors)
+		colors.hint = colors.orange
+		colors.error = '#ff0000'
+	end,
+})
 
--- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
+if not status_ok then
+	return
+end
