@@ -28,6 +28,7 @@ telescope.setup({
 		file_browser = {
 			initial_mode = 'normal',
 			grouped = true,
+			path = '%:p:h',
 			hijack_netrw = true,
 			hidden = true,
 		},
@@ -37,6 +38,12 @@ telescope.setup({
 			find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' }, --removes the ../ prefix
 			hidden = true,
 			no_ignore = true,
+		},
+		buffers = {
+			initial_mode = 'normal',
+			previewer = false,
+			theme = 'dropdown',
+			sort_lastused = true,
 		},
 	},
 })

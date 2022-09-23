@@ -65,11 +65,13 @@ keymap('n', '<leader>fk', ':Telescope keymaps<CR>', opts)
 keymap('n', '<leader>fe', ':Telescope file_browser {hidden=true}<CR>', opts)
 keymap('n', '<leader>fd', ':Telescope diagnostics<CR>', opts)
 keymap('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
+keymap('n', '<leader>fb', ':Telescope buffers<CR>', opts)
+keymap('n', '<leader>fz', ':Telescope grep_string<CR>', opts)
 
 -- Git
 keymap('n', '<leader>gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', opts)
-keymap('n', '<leader>go', '<cmd>DiffViewOpen<CR>', opts)
-keymap('n', '<leader>gc', '<cmd>DiffViewOpen<CR>', opts)
+keymap('n', '<leader>go', '<cmd>DiffviewOpen<CR>', opts)
+keymap('n', '<leader>gc', '<cmd>DiffviewClose<CR>', opts)
 
 -- Comment
 keymap('n', '<leader>/', '<cmd>lua require(\'Comment.api\').toggle_current_linewise()<CR>', opts)
@@ -88,7 +90,6 @@ keymap('n', '<leader>dt', '<cmd>lua require\'dap\'.terminate()<cr>', opts)
 
 --Harpoon
 keymap('n', '<leader>mm', '<cmd>lua require"harpoon.mark".add_file()<cr>', opts)
-keymap('n', '<leader>mt', '<cmd>lua require"harpoon.ui".toggle_quick_menu()<cr>', opts)
 keymap('n', '<leader>mt', '<cmd>lua require"harpoon.ui".toggle_quick_menu()<cr>', opts)
 keymap('n', '<C-j>', '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', opts)
 keymap('n', '<C-k>', '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', opts)
