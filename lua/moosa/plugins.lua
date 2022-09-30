@@ -45,10 +45,8 @@ return packer.startup(function(use)
 	use({ 'nvim-lua/plenary.nvim', commit = '968a4b9afec0c633bc369662e78f8c5db0eba249' }) -- Useful lua functions used by lots of plugins
 	use({ 'windwp/nvim-autopairs', commit = 'fa6876f832ea1b71801c4e481d8feca9a36215ec' }) -- Autopairs, integrates with both cmp and treesitter
 	use({ 'numToStr/Comment.nvim', commit = '2c26a00f32b190390b664e56e32fd5347613b9e2' })
-	use({ 'JoosepAlviste/nvim-ts-context-commentstring', commit = '88343753dbe81c227a1c1ad2c8d764afb8d36269' })
+	use({ 'JoosepAlviste/nvim-ts-context-commentstring' })
 	use({ 'kyazdani42/nvim-web-devicons', commit = '8d2c5337f0a2d0a17de8e751876eeb192b32310e' })
-	-- using telescope file browser
-	-- use({ "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" })
 	use({ 'akinsho/bufferline.nvim', commit = 'c78b3ecf9539a719828bca82fc7ddb9b3ba0c353' })
 	use({ 'moll/vim-bbye', commit = '25ef93ac5a87526111f43e5110675032dbcacf56' })
 	use({ 'nvim-lualine/lualine.nvim', commit = '3362b28f917acc37538b1047f187ff1b5645ecdd' })
@@ -102,12 +100,23 @@ return packer.startup(function(use)
 	use({ 'rcarriga/nvim-dap-ui', commit = 'd76d6594374fb54abf2d94d6a320f3fd6e9bb2f7' })
 	use({ 'ravenxrz/DAPInstall.nvim', commit = '8798b4c36d33723e7bba6ed6e2c202f84bb300de' })
 
-	--Editorconfig
+	-- Editorconfig
 	use({ 'gpanders/editorconfig.nvim' })
 
-	--Harpoon
+	-- Harpoon
 	use({ 'ThePrimeagen/harpoon' })
 
+	-- nvim-notify
+	use({ 'rcarriga/nvim-notify' })
+
+	-- Overseer
+	use({ 'stevearc/overseer.nvim' })
+
+	-- Dressing
+	use({ 'stevearc/dressing.nvim' })
+
+	-- Navic
+	use({ 'SmiteshP/nvim-navic' })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
