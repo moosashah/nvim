@@ -4,11 +4,11 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 function _SOURCE_FILE()
-	vim.api.nvim_command [[
+  vim.api.nvim_command [[
   w
   so %
 	  ]]
-	print 'saved and sourced current file'
+  print 'saved and sourced current file'
 end
 
 --Remap space as leader key
@@ -67,6 +67,7 @@ keymap('n', '<leader>fd', ':Telescope diagnostics<CR>', opts)
 keymap('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 keymap('n', '<leader>fb', ':Telescope buffers<CR>', opts)
 keymap('n', '<leader>fz', ':Telescope grep_string<CR>', opts)
+keymap('n', '<leader>fn', ':Telescope noice<CR>', opts)
 
 -- Git
 keymap('n', '<leader>gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', opts)
@@ -74,8 +75,8 @@ keymap('n', '<leader>go', '<cmd>DiffviewOpen<CR>', opts)
 keymap('n', '<leader>gc', '<cmd>DiffviewClose<CR>', opts)
 
 -- Comment
-keymap('n', '<leader>/', '<cmd>lua require(\'Comment.api\').toggle_current_linewise()<CR>', opts)
-keymap('x', '<leader>/', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+keymap('n', '<leader>/', '<cmd>lua require(\'Comment.api\').toggle.current_linewise()<CR>', opts)
+keymap('x', '<leader>/', '<ESC><CMD>lua require("Comment.api").toggle.linewise_op(vim.fn.visualmode())<CR>')
 
 -- DAP
 keymap('n', '<leader>db', '<cmd>lua require\'dap\'.toggle_breakpoint()<cr>', opts)

@@ -1,10 +1,10 @@
 local has_navic, navic = pcall(require, 'nvim-navic')
 if not has_navic then
-	return
+  return
 end
 
 navic.setup({
-	highlight = true,
+  highlight = true,
 })
 
--- vim.o.winbar = '%{%v:lua.require\'nvim-navic\'.get_location()%}'
+vim.o.winbar = '%{%v:lua.require\'nvim-navic\'.get_location()%}'

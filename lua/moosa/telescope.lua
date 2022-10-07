@@ -1,51 +1,51 @@
 local status, telescope = pcall(require, 'telescope')
 if not status then
-	return
+  return
 end
 
 local actions = require 'telescope.actions'
 
 telescope.setup({
-	defaults = {
-		prompt_prefix = ' ',
-		selection_caret = ' ',
-		file_ignore_patterns = { 'node_modules', 'yarn.lock', '.yarn/cache', '.git/', 'dist/', '.next/' },
-		dynamic_preview_title = true,
-		mappings = {
-			i = {
-				['<C-j>'] = actions.cycle_history_next,
-				['<C-k>'] = actions.cycle_history_prev,
-				['<Down>'] = actions.move_selection_next,
-				['<Up>'] = actions.move_selection_previous,
-			},
-			n = {
-				['gg'] = actions.move_to_top,
-				['G'] = actions.move_to_bottom,
-			},
-		},
-	},
-	extensions = {
-		file_browser = {
-			initial_mode = 'normal',
-			grouped = true,
-			path = '%:p:h',
-			hijack_netrw = true,
-			hidden = true,
-		},
-	},
-	pickers = {
-		find_files = {
-			find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' }, --removes the ../ prefix
-			hidden = true,
-			no_ignore = true,
-		},
-		buffers = {
-			initial_mode = 'normal',
-			previewer = false,
-			theme = 'dropdown',
-			sort_lastused = true,
-		},
-	},
+  defaults = {
+    prompt_prefix = ' ',
+    selection_caret = ' ',
+    file_ignore_patterns = { 'node_modules', 'yarn.lock', '.yarn/cache', '.git/', 'dist/', '.next/' },
+    dynamic_preview_title = true,
+    mappings = {
+      i = {
+        ['<C-j>'] = actions.cycle_history_next,
+        ['<C-k>'] = actions.cycle_history_prev,
+        ['<Down>'] = actions.move_selection_next,
+        ['<Up>'] = actions.move_selection_previous,
+      },
+      n = {
+        ['gg'] = actions.move_to_top,
+        ['G'] = actions.move_to_bottom,
+      },
+    },
+  },
+  extensions = {
+    file_browser = {
+      initial_mode = 'normal',
+      grouped = true,
+      path = '%:p:h',
+      hijack_netrw = true,
+      hidden = true,
+    },
+  },
+  pickers = {
+    find_files = {
+      find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' }, --removes the ../ prefix
+      hidden = true,
+      no_ignore = true,
+    },
+    buffers = {
+      initial_mode = 'normal',
+      previewer = false,
+      theme = 'dropdown',
+      sort_lastused = true,
+    },
+  },
 })
 
 telescope.load_extension 'file_browser'
