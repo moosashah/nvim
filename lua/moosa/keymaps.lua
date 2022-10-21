@@ -4,11 +4,11 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 function _SOURCE_FILE()
-  vim.api.nvim_command [[
+	vim.api.nvim_command [[
   w
   so %
 	  ]]
-  print 'saved and sourced current file'
+	print 'saved and sourced current file'
 end
 
 --Remap space as leader key
@@ -60,14 +60,18 @@ keymap('v', 'K', ':m \'<-2 <cr>gv=gv')
 
 -- Telescope
 keymap('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+keymap('n', '<leader>fl', ':Telescope find_files hidden=true no_ignore=true<CR>', opts)
 keymap('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 keymap('n', '<leader>fk', ':Telescope keymaps<CR>', opts)
-keymap('n', '<leader>fe', ':Telescope file_browser {hidden=true}<CR>', opts)
+keymap('n', '<leader>fr', ':Telescope lsp_references<CR>', opts)
+keymap('n', '<leader>fe', ':Telescope file_browser<CR>', opts)
 keymap('n', '<leader>fd', ':Telescope diagnostics<CR>', opts)
 keymap('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
-keymap('n', '<leader>fb', ':Telescope buffers<CR>', opts)
 keymap('n', '<leader>fz', ':Telescope grep_string<CR>', opts)
 keymap('n', '<leader>fn', ':Telescope noice<CR>', opts)
+
+-- Nvim-tree
+keymap('n', '<leader>fb', ':NvimTreeToggle<CR>', opts)
 
 -- Git
 keymap('n', '<leader>gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', opts)
