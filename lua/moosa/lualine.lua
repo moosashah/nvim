@@ -21,6 +21,14 @@ local filename = {
 	path = 3,
 }
 
+local noice_mode = require('noice').api.statusline.mode
+
+local recording_macro = {
+	noice_mode.get,
+	cond = noice_mode.has,
+	color = { fg = '#ff9e64' },
+}
+
 local filetype = {
 	'filetype',
 }
@@ -41,7 +49,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { 'branch' },
-		lualine_c = { diagnostics },
+		lualine_c = { diagnostics, recording_macro },
 		lualine_x = { diff },
 		lualine_y = { filetype },
 		lualine_z = { filename },

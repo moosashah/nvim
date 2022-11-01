@@ -28,6 +28,9 @@ keymap('n', '<C-u>', '<C-u>zz', opts)
 -- Make Executable
 keymap('n', '<leader>xx', '<cmd>!chmod +x %<CR', opts)
 
+-- quick escape
+keymap('i', 'jk', '<esc>', opts)
+
 -- Navigate buffers
 keymap('n', '<S-l>', ':bnext<CR>', opts)
 keymap('n', '<S-h>', ':bprevious<CR>', opts)
@@ -45,7 +48,7 @@ keymap('n', '<S-q>', '<cmd>Bdelete!<CR>', opts)
 keymap('v', 'p', '"_dP', opts)
 
 -- Source current file
-keymap('n', '<leader>xs', '<cmd> lua _SOURCE_FILE()<CR>', opts)
+keymap('n', '<leader><leader>x', '<cmd> lua _SOURCE_FILE()<CR>', opts)
 
 -- Visual --
 -- Stay in indent mode
