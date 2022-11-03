@@ -39,12 +39,6 @@ telescope.setup({
 		find_files = {
 			find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' }, --removes the ../ prefix
 		},
-		buffers = {
-			initial_mode = 'normal',
-			previewer = false,
-			theme = 'dropdown',
-			sort_lastused = true,
-		},
 	},
 })
 
