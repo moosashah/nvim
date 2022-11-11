@@ -1,5 +1,6 @@
 require 'moosa.options'
 require 'moosa.keymaps'
+require 'moosa.neodev'
 require 'moosa.plugins'
 require 'moosa.autocommands'
 require 'moosa.colorscheme'
