@@ -24,6 +24,7 @@ keymap('n', '<leader>qo', ':copen<CR>', opts)
 -- Center page on scroll
 keymap('n', '<C-d>', '<C-d>zz', opts)
 keymap('n', '<C-u>', '<C-u>zz', opts)
+keymap('n', 'n', 'nzz', opts)
 
 -- Make Executable
 keymap('n', '<leader>xx', '<cmd>!chmod +x %<CR', opts)
