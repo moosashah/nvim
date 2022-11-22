@@ -3,14 +3,6 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
-function _SOURCE_FILE()
-	vim.api.nvim_command [[
-  w
-  so %
-	  ]]
-	print 'saved and sourced current file'
-end
-
 --Remap space as leader key
 keymap('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
@@ -20,6 +12,8 @@ keymap('n', '<C-Down>', ':cnext<CR>', opts)
 keymap('n', '<C-Up>', ':cprev<CR>', opts)
 keymap('n', '<leader>qq', ':cclose<CR>', opts)
 keymap('n', '<leader>qo', ':copen<CR>', opts)
+
+keymap('n', '<Leader>lt', '<cmd>lua TOGGLE_DIAGNOSTICS()<CR>', opts)
 
 -- Center page on scroll
 keymap('n', '<C-d>', '<C-d>zz', opts)
@@ -46,7 +40,7 @@ keymap('n', '<S-q>', '<cmd>Bdelete!<CR>', opts)
 keymap('v', 'p', '"_dP', opts)
 
 -- Source current file
-keymap('n', '<leader><leader>x', '<cmd> lua _SOURCE_FILE()<CR>', opts)
+keymap('n', '<leader><leader>x', '<cmd>lua _SOURCE_FILE()<CR>', opts)
 
 -- Visual --
 -- Stay in indent mode

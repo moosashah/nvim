@@ -115,4 +115,23 @@ function M.smart_quit()
 	end
 end
 
+function _SOURCE_FILE()
+	vim.api.nvim_command [[
+  w
+  so %
+	  ]]
+	print 'saved and sourced current file'
+end
+
+function TOGGLE_DIAGNOSTICS()
+	local vt = vim.diagnostic.config().virtual_text
+	vim.diagnostic.config({ virtual_lines = vt })
+	vim.diagnostic.config({ virtual_text = not vt })
+	return vt
+end
+
+function P(x)
+	print(vim.inspect(x))
+end
+
 return M
