@@ -116,10 +116,8 @@ function M.smart_quit()
 end
 
 function _SOURCE_FILE()
-	vim.api.nvim_command [[
-  w
-  so %
-	  ]]
+	vim.api.nvim_command 'silent! write'
+	vim.api.nvim_command 'source %'
 	print 'saved and sourced current file'
 end
 
@@ -132,6 +130,14 @@ end
 
 function P(x)
 	print(vim.inspect(x))
+end
+
+function Unleash_the_hoarde()
+	local duck = require 'duck'
+	local hoarde = 10
+	for _ = 1, hoarde, 1 do
+		duck.hatch '🦆'
+	end
 end
 
 return M

@@ -9,6 +9,14 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+	pattern = { '*.lua' },
+	callback = function()
+		vim.api.nvim_command 'source %'
+		print 'sourced file aswell'
+	end,
+})
+
 -- Remove statusline and tabline when in Alpha
 vim.api.nvim_create_autocmd({ 'user' }, {
 	pattern = { 'AlphaReady' },
@@ -21,13 +29,13 @@ vim.api.nvim_create_autocmd({ 'user' }, {
 })
 
 -- Set wrap and spell in markdown and gitcommit
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-	pattern = { 'gitcommit', 'markdown' },
-	callback = function()
-		vim.opt_local.wrap = true
-		vim.opt_local.spell = true
-	end,
-})
+-- vim.api.nvim_create_autocmd({ 'FileType' }, {
+-- 	pattern = { 'gitcommit', 'markdown' },
+-- 	callback = function()
+-- 		vim.opt_local.wrap = true
+-- 		vim.opt_local.spell = true
+-- 	end,
+-- })
 
 vim.cmd 'autocmd BufEnter * ++nested if winnr(\'$\') == 1 && bufname() == \'NvimTree_\' . tabpagenr() | quit | endif'
 
@@ -45,8 +53,8 @@ vim.api.nvim_create_autocmd({ 'TextYankPost' }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ 'VimEnter' }, {
-	callback = function()
-		vim.cmd 'hi link illuminatedWord LspReferenceText'
-	end,
-})
+-- vim.api.nvim_create_autocmd({ 'VimEnter' }, {
+-- 	callback = function()
+-- 		vim.cmd 'hi link illuminatedWord LspReferenceText'
+-- 	end,
+-- })

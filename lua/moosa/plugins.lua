@@ -134,6 +134,9 @@ return packer.startup(function(use)
 	-- Rest
 	use({ 'NTBBloodbath/rest.nvim' })
 
+	-- Duck
+	use({ 'tamton-aquib/duck.nvim' })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
