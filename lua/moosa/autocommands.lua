@@ -9,14 +9,6 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-	pattern = { '*.lua' },
-	callback = function()
-		vim.api.nvim_command 'source %'
-		print 'sourced file aswell'
-	end,
-})
-
 -- Remove statusline and tabline when in Alpha
 vim.api.nvim_create_autocmd({ 'user' }, {
 	pattern = { 'AlphaReady' },

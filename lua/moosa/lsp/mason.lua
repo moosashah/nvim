@@ -21,6 +21,8 @@ local servers = {
 	'bashls',
 	'gopls',
 	'tailwindcss',
+	'rust-analyser',
+	-- 'denols',
 }
 
 local settings = {

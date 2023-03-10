@@ -100,3 +100,8 @@ keymap('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>', opts)
 keymap('n', '<leader>nd', '<cmd>lua require"duck".hatch("🦆", 10)<CR>', opts)
 keymap('n', '<leader>nc', '<cmd>lua require"duck".hatch("🦀", 10)<CR>', opts)
 keymap('n', '<leader>nh', '<cmd>lua Unleash_the_hoarde()<CR>', opts)
+
+-- NeoTest
+keymap('n', '<leader>tf', '<cmd>lua require"neotest".run.run()<CR>', opts)
+keymap('n', '<leader>ta', '<cmd>lua require"neotest".run()<CR>', opts)
+keymap('n', '<leader>ts', '<cmd>lua require"neotest".summary.toggle()<CR>', opts)

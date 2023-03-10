@@ -7,12 +7,12 @@ if not colorscheme_status_ok then
 end
 
 tokyonight.setup({
-	style = 'moon',
+	style = 'storm',
 	styles = {
 		functions = { italic = true },
 	},
 	sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
-	day_brightness = 0.5,
+	day_brightness = 0.3,
 	hide_inactive_statusline = true,
 	dim_inactive = true,
 })
