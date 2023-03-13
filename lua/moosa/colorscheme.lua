@@ -7,7 +7,7 @@ if not colorscheme_status_ok then
 end
 
 tokyonight.setup({
-	style = 'storm',
+	style = 'moon',
 	styles = {
 		functions = { italic = true },
 	},

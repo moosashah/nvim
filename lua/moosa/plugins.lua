@@ -99,7 +99,12 @@ require('lazy').setup({
 	{ 'saadparwaiz1/cmp_luasnip' }, -- snippet completions
 	{ 'hrsh7th/cmp-nvim-lsp' },
 	{ 'L3MON4D3/LuaSnip' }, -- Snippets
-	{ 'simrat39/rust-tools.nvim' },
+	{
+		'simrat39/rust-tools.nvim',
+		config = function()
+			require('rust-tools').setup()
+		end,
+	},
 
 	-- LSP
 	--snippet engine
@@ -109,22 +114,21 @@ require('lazy').setup({
 	{ 'williamboman/mason-lspconfig.nvim' },
 	{ 'jose-elias-alvarez/null-ls.nvim' }, -- for formatters and linters
 	{ 'RRethy/vim-illuminate' },
-	{ 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' },
-	-- Inlay-hints
-	{ 'lvimuser/lsp-inlayhints.nvim' }, -- Telescope
-	{ 'nvim-telescope/telescope.nvim' },
-	{ 'nvim-telescope/telescope-file-browser.nvim' }, -- Treesitter
-	{ 'nvim-treesitter/nvim-treesitter' },
+	{ 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' }, -- Inlay-hints
+	{ 'lvimuser/lsp-inlayhints.nvim' },
+	{ 'nvim-telescope/telescope.nvim' }, -- Telescope
+	{ 'nvim-telescope/telescope-file-browser.nvim' },
+	{ 'nvim-treesitter/nvim-treesitter' }, -- Treesitter
 	{ 'windwp/nvim-ts-autotag' },
-	{ 'p00f/nvim-ts-rainbow' }, -- Git
-	{ 'lewis6991/gitsigns.nvim' },
-	{ 'sindrets/diffview.nvim' },          -- Editorconfig
-	{ 'gpanders/editorconfig.nvim' },      -- Harpoon
-	{ 'ThePrimeagen/harpoon' },            -- Overseer
-	{ 'stevearc/overseer.nvim' },          -- Dressing
-	{ 'stevearc/dressing.nvim' },          -- Better Quickfix
-	{ 'kevinhwang91/nvim-bqf' },           -- Vim be good
-	{ 'ThePrimeagen/vim-be-good' },        -- Ray so good
-	{ 's-u-d-o-e-r/vim-ray-so-beautiful' }, -- Rest
-	{ 'NTBBloodbath/rest.nvim' },          -- Duck
+	{ 'p00f/nvim-ts-rainbow' },
+	{ 'lewis6991/gitsigns.nvim' }, -- Git
+	{ 'sindrets/diffview.nvim' }, -- Diffview
+	{ 'gpanders/editorconfig.nvim' }, -- Editorconfig
+	{ 'ThePrimeagen/harpoon' }, -- Harpoon
+	{ 'stevearc/overseer.nvim' }, -- Overseer
+	{ 'stevearc/dressing.nvim' }, -- Dressing
+	{ 'kevinhwang91/nvim-bqf' }, -- Better quickfix list
+	{ 'ThePrimeagen/vim-be-good' }, -- Vim game
+	{ 's-u-d-o-e-r/vim-ray-so-beautiful' }, -- Raycast beautiful code snippets
+	{ 'NTBBloodbath/rest.nvim' }, -- Rest client
 })
