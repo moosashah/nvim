@@ -42,7 +42,6 @@ cmp.setup({
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
-
 	mapping = cmp.mapping.preset.insert({
 		['<C-k>'] = cmp.mapping.select_prev_item(),
 		['<C-j>'] = cmp.mapping.select_next_item(),
@@ -68,6 +67,7 @@ cmp.setup({
 				path = 'PATH',
 				emoji = 'EMO',
 			})[entry.source.name]
+			require('tailwindcss-colorizer-cmp').formatter(entry, vim_item)
 			return vim_item
 		end,
 	},

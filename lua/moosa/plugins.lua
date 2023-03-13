@@ -93,21 +93,20 @@ require('lazy').setup({
 		},
 	},
 	-- cmp plugins
-	{ 'hrsh7th/nvim-cmp' }, -- The completion plugin
+	{
+		'hrsh7th/nvim-cmp',
+	}, -- The completion plugin
 	{ 'hrsh7th/cmp-buffer' }, -- buffer completions
 	{ 'hrsh7th/cmp-path' }, -- path completions
 	{ 'saadparwaiz1/cmp_luasnip' }, -- snippet completions
 	{ 'hrsh7th/cmp-nvim-lsp' },
 	{ 'L3MON4D3/LuaSnip' }, -- Snippets
+	{ 'roobert/tailwindcss-colorizer-cmp.nvim', config = true },
 	{
 		'simrat39/rust-tools.nvim',
-		config = function()
-			require('rust-tools').setup()
-		end,
+		config = true,
 	},
 
-	-- LSP
-	--snippet engine
 	{ 'neovim/nvim-lspconfig' }, -- enable LSP
 	{ 'williamboman/nvim-lsp-installer' }, -- simple to use language server installer
 	{ 'williamboman/mason.nvim' }, -- simple to use language server installer
@@ -131,4 +130,12 @@ require('lazy').setup({
 	{ 'ThePrimeagen/vim-be-good' }, -- Vim game
 	{ 's-u-d-o-e-r/vim-ray-so-beautiful' }, -- Raycast beautiful code snippets
 	{ 'NTBBloodbath/rest.nvim' }, -- Rest client
+	{
+		'NvChad/nvim-colorizer.lua',
+		opts = {
+			user_default_options = {
+				tailwind = true,
+			},
+		},
+	},
 })
