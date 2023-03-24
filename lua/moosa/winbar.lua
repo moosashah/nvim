@@ -12,7 +12,6 @@ M.winbar_filetype_exclude = {
 	'lir',
 	'Outline',
 	'spectre_panel',
-	'toggleterm',
 	'DressingSelect',
 	'Jaq',
 	'harpoon',
@@ -33,8 +32,11 @@ M.get_filename = function()
 	local f = require 'moosa.functions'
 
 	if not f.isempty(filename) then
-		local file_icon, file_icon_color =
-			require('nvim-web-devicons').get_icon_color(filename, extension, { default = true })
+		local file_icon, file_icon_color = require('nvim-web-devicons').get_icon_color(
+			filename,
+			extension,
+			{ default = true }
+		)
 
 		local hl_group = 'FileIconColor' .. extension
 
