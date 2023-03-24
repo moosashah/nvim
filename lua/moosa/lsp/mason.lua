@@ -15,7 +15,7 @@ local servers = {
 	'html',
 	'jdtls',
 	'jsonls',
-	'sumneko_lua',
+	'lua_ls',
 	'tsserver',
 	'yamlls',
 	'bashls',
@@ -69,8 +69,8 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend('force', gopls_opts, opts)
 	end
 
-	if server == 'sumneko_lua' then
-		local sumneko_opts = require 'moosa.lsp.settings.sumneko_lua'
+	if server == 'lua_ls' then
+		local sumneko_opts = require 'moosa.lsp.settings.lua_ls'
 		opts = vim.tbl_deep_extend('force', sumneko_opts, opts)
 	end
 

@@ -19,6 +19,7 @@ keymap('n', '<Leader>lt', '<cmd>lua TOGGLE_DIAGNOSTICS()<CR>', opts)
 keymap('n', '<C-d>', '<C-d>zz', opts)
 keymap('n', '<C-u>', '<C-u>zz', opts)
 keymap('n', 'n', 'nzz', opts)
+keymap('n', 'N', 'Nzz', opts)
 
 -- Make Executable
 keymap('n', '<leader>xx', '<cmd>!chmod +x %<CR', opts)
@@ -55,7 +56,7 @@ keymap('v', 'K', ':m \'<-2 <cr>gv=gv')
 
 -- Telescope
 keymap('n', '<leader>ff', ':Telescope find_files<CR>', opts)
-keymap('n', '<leader>fl', ':Telescope find_files hidden=true no_ignore=true<CR>', opts)
+keymap('n', '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>', opts)
 keymap('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 keymap('n', '<leader>fk', ':Telescope keymaps<CR>', opts)
 keymap('n', '<leader>fr', ':Telescope lsp_references<CR>', opts)
@@ -68,25 +69,9 @@ keymap('n', '<leader>fn', ':Telescope noice<CR>', opts)
 -- Nvim-tree
 keymap('n', '<leader>fe', ':NvimTreeToggle<CR>', opts)
 
--- Git
-keymap('n', '<leader>gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', opts)
-keymap('n', '<leader>go', '<cmd>DiffviewOpen<CR>', opts)
-keymap('n', '<leader>gc', '<cmd>DiffviewClose<CR>', opts)
-
 -- Comment
 keymap('n', '<leader>/', '<cmd>lua require(\'Comment.api\').toggle.current_linewise()<CR>', opts)
 keymap('x', '<leader>/', '<ESC><CMD>lua require("Comment.api").toggle.linewise_op(vim.fn.visualmode())<CR>')
-
--- -- DAP
--- keymap('n', '<leader>db', '<cmd>lua require\'dap\'.toggle_breakpoint()<cr>', opts)
--- keymap('n', '<leader>dc', '<cmd>lua require\'dap\'.continue()<cr>', opts)
--- keymap('n', '<leader>di', '<cmd>lua require\'dap\'.step_into()<cr>', opts)
--- keymap('n', '<leader>do', '<cmd>lua require\'dap\'.step_over()<cr>', opts)
--- keymap('n', '<leader>dO', '<cmd>lua require\'dap\'.step_out()<cr>', opts)
--- keymap('n', '<leader>dr', '<cmd>lua require\'dap\'.repl.toggle()<cr>', opts)
--- keymap('n', '<leader>dl', '<cmd>lua require\'dap\'.run_last()<cr>', opts)
--- keymap('n', '<leader>du', '<cmd>lua require\'dapui\'.toggle()<cr>', opts)
--- keymap('n', '<leader>dt', '<cmd>lua require\'dap\'.terminate()<cr>', opts)
 
 --Harpoon
 keymap('n', '<leader>mm', '<cmd>lua require"harpoon.mark".add_file()<cr>', opts)
@@ -95,11 +80,6 @@ keymap('n', '<C-j>', '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', opts)
 keymap('n', '<C-k>', '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', opts)
 keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', opts)
 keymap('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>', opts)
-
---Duck
-keymap('n', '<leader>nd', '<cmd>lua require"duck".hatch("🦆", 10)<CR>', opts)
-keymap('n', '<leader>nc', '<cmd>lua require"duck".hatch("🦀", 10)<CR>', opts)
-keymap('n', '<leader>nh', '<cmd>lua Unleash_the_hoarde()<CR>', opts)
 
 -- NeoTest
 keymap('n', '<leader>tf', '<cmd>lua require"neotest".run.run()<CR>', opts)
