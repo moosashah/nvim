@@ -63,7 +63,6 @@ require('lazy').setup({
 	{ 'akinsho/bufferline.nvim' },
 	{ 'moll/vim-bbye' },
 	{ 'nvim-lualine/lualine.nvim' },
-	{ 'akinsho/toggleterm.nvim' },
 	{ 'lukas-reineke/indent-blankline.nvim' },
 	{ 'goolord/alpha-nvim' },
 	{ 'lewis6991/impatient.nvim' },
@@ -127,8 +126,6 @@ require('lazy').setup({
 	{ 'stevearc/overseer.nvim' }, -- Overseer
 	{ 'stevearc/dressing.nvim' }, -- Dressing
 	{ 'kevinhwang91/nvim-bqf' }, -- Better quickfix list
-	{ 'ThePrimeagen/vim-be-good' }, -- Vim game
-	{ 's-u-d-o-e-r/vim-ray-so-beautiful' }, -- Raycast beautiful code snippets
 	{ 'NTBBloodbath/rest.nvim' }, -- Rest client
 	{
 		'NvChad/nvim-colorizer.lua',
