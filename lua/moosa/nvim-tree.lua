@@ -34,11 +34,6 @@ nvim_tree.setup({
 	},
 	disable_netrw = true,
 	hijack_netrw = true,
-	ignore_ft_on_setup = {
-		'startify',
-		'dashboard',
-		'alpha',
-	},
 	filters = {
 		custom = { '.git' },
 		exclude = { '.gitignore', '.env', '.env.*' },
@@ -116,7 +111,7 @@ nvim_tree.setup({
 	},
 	actions = {
 		open_file = {
-			quit_on_open = false,
+			quit_on_open = true,
 		},
 	},
 	view = {

@@ -26,20 +26,4 @@ telescope.setup({
 			},
 		},
 	},
-	extensions = {
-		file_browser = {
-			initial_mode = 'normal',
-			grouped = true,
-			path = '%:p:h',
-			hidden = true,
-			respect_gitignore = false,
-		},
-	},
-	pickers = {
-		find_files = {
-			find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' }, --removes the ../ prefix
-		},
-	},
 })
-
-telescope.load_extension 'file_browser'

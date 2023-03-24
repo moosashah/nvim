@@ -25,7 +25,6 @@ require('lazy').setup({
 	{ 'nvim-lualine/lualine.nvim' },
 	{ 'lukas-reineke/indent-blankline.nvim' },
 	{ 'goolord/alpha-nvim' },
-	{ 'lewis6991/impatient.nvim' },
 	{
 		'nvim-neotest/neotest',
 		dependencies = {
@@ -39,7 +38,7 @@ require('lazy').setup({
 	{ 'kyazdani42/nvim-tree.lua' },
 	-- Folke
 	{ 'folke/tokyonight.nvim' },
-	{ 'folke/neodev.nvim' },
+	{ 'folke/neodev.nvim', config = true },
 	{
 		'folke/noice.nvim',
 		event = 'VimEnter',
@@ -66,14 +65,13 @@ require('lazy').setup({
 	{ 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' },
 	{ 'lvimuser/lsp-inlayhints.nvim' },
 	{ 'nvim-telescope/telescope.nvim' },
-	{ 'nvim-telescope/telescope-file-browser.nvim' },
 	{ 'nvim-treesitter/nvim-treesitter' },
 	{ 'windwp/nvim-ts-autotag' },
 	{ 'p00f/nvim-ts-rainbow' },
 	{ 'lewis6991/gitsigns.nvim' },
 	{ 'gpanders/editorconfig.nvim' },
 	{ 'ThePrimeagen/harpoon' },
-	{ 'stevearc/dressing.nvim' },
+	{ 'stevearc/dressing.nvim', config = true },
 	{ 'kevinhwang91/nvim-bqf' },
 	{ 'NTBBloodbath/rest.nvim' },
 	{ 'NvChad/nvim-colorizer.lua', opts = { user_default_options = { tailwind = true } } },

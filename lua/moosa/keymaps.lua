@@ -25,14 +25,14 @@ keymap('n', 'N', 'Nzz', opts)
 keymap('n', '<leader>xx', '<cmd>!chmod +x %<CR', opts)
 
 -- Navigate buffers
-keymap('n', '<S-l>', ':bnext<CR>', opts)
-keymap('n', '<S-h>', ':bprevious<CR>', opts)
+keymap('n', '<S-l>', vim.cmd.bnext, opts)
+keymap('n', '<S-h>', vim.cmd.bprev, opts)
 
 -- Delete to dev null
 keymap({ 'v', 'x' }, '<leader>dd', '"_d<CR>', opts)
 
 -- Clear highlights
-keymap('n', '<leader>h', '<cmd>nohlsearch<CR>', opts)
+keymap('n', '<leader>h', vim.cmd.nohlsearch, opts)
 
 -- Close buffers
 keymap('n', '<S-q>', '<cmd>Bdelete!<CR>', opts)
@@ -57,17 +57,16 @@ keymap('v', 'K', ':m \'<-2 <cr>gv=gv')
 -- Telescope
 keymap('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 keymap('n', '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>', opts)
-keymap('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
+keymap('n', '<leader>fs', ':Telescope live_grep<CR>', opts)
 keymap('n', '<leader>fk', ':Telescope keymaps<CR>', opts)
 keymap('n', '<leader>fr', ':Telescope lsp_references<CR>', opts)
-keymap('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
 keymap('n', '<leader>fd', ':Telescope diagnostics<CR>', opts)
 keymap('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 keymap('n', '<leader>fz', ':Telescope grep_string<CR>', opts)
 keymap('n', '<leader>fn', ':Telescope noice<CR>', opts)
 
 -- Nvim-tree
-keymap('n', '<leader>fe', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>fe', vim.cmd.NvimTreeToggle, opts)
 
 -- Comment
 keymap('n', '<leader>/', '<cmd>lua require(\'Comment.api\').toggle.current_linewise()<CR>', opts)

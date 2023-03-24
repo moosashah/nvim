@@ -8,7 +8,7 @@ return {
 				callSnippet = 'Replace',
 			},
 			hint = {
-				enable = true,
+				enable = false,
 				arrayIndex = 'Disable', -- "Enable", "Auto", "Disable"
 				await = true,
 				paramName = 'All', -- "All", "Literal", "Disable"

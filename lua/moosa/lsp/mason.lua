@@ -9,20 +9,11 @@ if not status_ok_1 then
 end
 
 local servers = {
-	'cssls',
-	'cssmodules_ls',
-	'emmet_ls',
-	'html',
-	'jdtls',
-	'jsonls',
 	'lua_ls',
+	'rust_analyzer',
 	'tsserver',
-	'yamlls',
-	'bashls',
 	'gopls',
 	'tailwindcss',
-	'rust-analyser',
-	-- 'denols',
 }
 
 local settings = {
@@ -59,15 +50,15 @@ for _, server in pairs(servers) do
 
 	server = vim.split(server, '@')[1]
 
-	if server == 'tsserver' then
-		local tsserver_opts = require 'moosa.lsp.settings.tsserver'
-		opts = vim.tbl_deep_extend('force', tsserver_opts, opts)
-	end
-
-	if server == 'gopls' then
-		local gopls_opts = require 'moosa.lsp.settings.gopls'
-		opts = vim.tbl_deep_extend('force', gopls_opts, opts)
-	end
+	-- if server == 'tsserver' then
+	-- 	local tsserver_opts = require 'moosa.lsp.settings.tsserver'
+	-- 	opts = vim.tbl_deep_extend('force', tsserver_opts, opts)
+	-- end
+	--
+	-- if server == 'gopls' then
+	-- 	local gopls_opts = require 'moosa.lsp.settings.gopls'
+	-- 	opts = vim.tbl_deep_extend('force', gopls_opts, opts)
+	-- end
 
 	if server == 'lua_ls' then
 		local sumneko_opts = require 'moosa.lsp.settings.lua_ls'
