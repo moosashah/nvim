@@ -1,5 +1,3 @@
-local colorscheme = 'tokyonight'
-
 local colorscheme_status_ok, tokyonight = pcall(require, 'tokyonight')
 if not colorscheme_status_ok then
 	print 'no color scheme sadge'
@@ -17,8 +15,11 @@ tokyonight.setup({
 	dim_inactive = true,
 })
 
-local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
-if not status_ok then
-	print 'failed to apply colorscheme'
-	return
+function ColorMyPencils(color)
+	color = color or 'tokyonight'
+	vim.cmd.colorscheme(color)
+	vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+	vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 end
+
+ColorMyPencils()
