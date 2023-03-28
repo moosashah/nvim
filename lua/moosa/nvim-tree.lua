@@ -32,8 +32,8 @@ nvim_tree.setup({
 	hijack_directories = {
 		enable = false,
 	},
-	disable_netrw = true,
-	hijack_netrw = true,
+	disable_netrw = false,
+	hijack_netrw = false,
 	filters = {
 		custom = { '.git' },
 		exclude = { '.gitignore', '.env', '.env.*' },
