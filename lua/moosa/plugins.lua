@@ -74,5 +74,6 @@ require('lazy').setup({
 	{ 'stevearc/dressing.nvim', config = true },
 	{ 'kevinhwang91/nvim-bqf' },
 	{ 'NTBBloodbath/rest.nvim' },
+	{ 'christoomey/vim-tmux-navigator' },
 	{ 'NvChad/nvim-colorizer.lua', opts = { user_default_options = { tailwind = true } } },
 })

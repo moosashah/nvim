@@ -75,9 +75,9 @@ keymap('x', '<leader>/', '<ESC><CMD>lua require("Comment.api").toggle.linewise_o
 --Harpoon
 keymap('n', '<leader>ma', '<cmd>lua require"harpoon.mark".add_file()<cr>', opts)
 keymap('n', '<leader>mt', '<cmd>lua require"harpoon.ui".toggle_quick_menu()<cr>', opts)
-keymap('n', '<C-j>', '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', opts)
-keymap('n', '<C-k>', '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', opts)
-keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', opts)
+keymap('n', '∆', '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', opts)
+keymap('n', '˚', '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', opts)
+keymap('n', '¬', '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', opts)
 keymap('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>', opts)
 
 -- NeoTest
