@@ -26,6 +26,7 @@ require('lazy').setup({
 	{ 'goolord/alpha-nvim' },
 	{
 		'nvim-neotest/neotest',
+		event = 'VeryLazy',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			'nvim-treesitter/nvim-treesitter',
@@ -35,7 +36,6 @@ require('lazy').setup({
 	},
 
 	{ 'kyazdani42/nvim-tree.lua' },
-	-- Folke
 	{ 'folke/tokyonight.nvim' },
 	{ 'folke/neodev.nvim', config = true },
 	{
@@ -80,5 +80,9 @@ require('lazy').setup({
 		keys = {
 			{ '<leader>u', vim.cmd.UndotreeToggle },
 		},
+	},
+}, {
+	defaults = {
+		lazy = true,
 	},
 })
