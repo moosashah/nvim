@@ -115,12 +115,6 @@ function M.smart_quit()
 	end
 end
 
-function _SOURCE_FILE()
-	vim.api.nvim_command 'silent! write'
-	vim.api.nvim_command 'source %'
-	print 'saved and sourced current file'
-end
-
 function TOGGLE_DIAGNOSTICS()
 	local vt = vim.diagnostic.config().virtual_text
 	vim.diagnostic.config({ virtual_lines = vt })
@@ -128,16 +122,16 @@ function TOGGLE_DIAGNOSTICS()
 	return vt
 end
 
-function P(x)
-	print(vim.inspect(x))
-end
-
-function Unleash_the_hoarde()
-	local duck = require 'duck'
-	local hoarde = 10
-	for _ = 1, hoarde, 1 do
-		duck.hatch '🦆'
+function ColorMyPencils(color)
+	color = color or 'tokyonight-moon'
+	vim.cmd.colorscheme(color)
+	if color ~= 'tokyonight-day' then
+		vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+		vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+		ColorMyPencils 'tokyonight-day'
 	end
 end
+
+ColorMyPencils 'tokyonight-moon'
 
 return M
