@@ -120,7 +120,9 @@ return {
 			},
 			view = {
 				hide_root_folder = false,
-				side = 'left',
+				float = {
+					enable = true,
+				},
 				mappings = {
 					custom_only = false,
 					list = {

@@ -6,14 +6,7 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap('', '<Space>', '<Nop>', opts)
 
--- Quick fix list
-keymap('n', '<C-Down>', ':cnext<CR>', opts)
-keymap('n', '<C-Up>', ':cprev<CR>', opts)
-keymap('n', '<leader>qq', ':cclose<CR>', opts)
-keymap('n', '<leader>qo', ':copen<CR>', opts)
-
 keymap('n', '<leader>lt', '<cmd>lua TOGGLE_DIAGNOSTICS()<CR>', opts)
-
 -- Center page on scroll
 keymap('n', '<C-d>', '<C-d>zz', opts)
 keymap('n', '<C-u>', '<C-u>zz', opts)
@@ -28,7 +21,7 @@ keymap('n', '<S-h>', vim.cmd.bprev, opts)
 keymap('n', '<leader>h', vim.cmd.nohlsearch, opts)
 
 -- Close buffers
-keymap('n', '<S-q>', '<cmd>Bdelete!<CR>', opts)
+keymap('n', '<S-q>', '<cmd>bdelete!<CR>', opts)
 
 -- Better paste
 keymap('v', 'p', '"_dP', opts)
