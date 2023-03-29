@@ -39,4 +39,5 @@ return {
     { '<leader>fn', ':Telescope noice<CR>' },
   },
   event = 'VimEnter',
+  dependencies = { 'BurntSushi/ripgrep' }
 }
