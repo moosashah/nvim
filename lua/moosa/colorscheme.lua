@@ -5,7 +5,6 @@ if not colorscheme_status_ok then
 end
 
 tokyonight.setup({
-	style = 'moon',
 	styles = {
 		functions = { italic = true },
 	},
@@ -16,10 +15,12 @@ tokyonight.setup({
 })
 
 function ColorMyPencils(color)
-	color = color or 'tokyonight'
+	color = color or 'tokyonight-moon'
 	vim.cmd.colorscheme(color)
-	vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-	vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+	if color ~= 'tokyonight-day' then
+		vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+		vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+	end
 end
 
 ColorMyPencils()
