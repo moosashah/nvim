@@ -6,7 +6,6 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap('', '<Space>', '<Nop>', opts)
 
-keymap('n', '<leader>lt', '<cmd>lua TOGGLE_DIAGNOSTICS()<CR>', opts)
 -- Center page on scroll
 keymap('n', '<C-d>', '<C-d>zz', opts)
 keymap('n', '<C-u>', '<C-u>zz', opts)

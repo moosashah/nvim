@@ -24,7 +24,5 @@ end
 
 require 'moosa.lsp.mason'
 require('moosa.lsp.handlers').setup()
-require 'moosa.lsp.null-ls'
-require 'moosa.lsp.lsp_lines'
 
 return M
