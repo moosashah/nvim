@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 
 require('lazy').setup({
-	{ 'wbthomason/packer.nvim' },
 	{ 'nvim-lua/plenary.nvim' },
 	{ 'windwp/nvim-autopairs' },
 	{ 'numToStr/Comment.nvim' },
@@ -76,4 +75,10 @@ require('lazy').setup({
 	{ 'NTBBloodbath/rest.nvim' },
 	{ 'christoomey/vim-tmux-navigator' },
 	{ 'NvChad/nvim-colorizer.lua', opts = { user_default_options = { tailwind = true } } },
+	{
+		'mbbill/undotree',
+		keys = {
+			{ '<leader>u', vim.cmd.UndotreeToggle },
+		},
+	},
 })
