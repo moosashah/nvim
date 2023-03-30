@@ -19,6 +19,6 @@ return {
       },
     },
     { 'gpanders/editorconfig.nvim' },
-    { 'christoomey/vim-tmux-navigator' },
+    { 'christoomey/vim-tmux-navigator', event = 'VimEnter' },
   },
 }
