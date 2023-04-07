@@ -6,12 +6,14 @@ function TOGGLE_DIAGNOSTICS()
 end
 
 function ColorMyPencils(color)
-  color = color or 'tokyonight-moon'
+  local color_schemes = {
+    tokyonight_light = 'tokyonight-day',
+    tokyonight_dark = 'tokyonight-moon',
+    rose_pine_dark = 'rose-pine',
+    rose_pine_light = 'rose-pine-dawn',
+  }
+  color = color or color_schemes.rose_pine_dark
   vim.cmd.colorscheme(color)
-  -- if color ~= 'tokyonight-day' then
-  -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-  -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-  -- end
 end
 
-ColorMyPencils 'tokyonight-moon'
+ColorMyPencils()

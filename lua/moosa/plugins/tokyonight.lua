@@ -1,5 +1,6 @@
 return {
   'folke/tokyonight.nvim',
+  event = 'VimEnter',
   config = {
     sidebars = { 'qf', 'vista_kind', 'terminal', 'lazy' },
     day_brightness = 0.3,
