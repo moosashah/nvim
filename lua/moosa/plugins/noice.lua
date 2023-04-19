@@ -13,33 +13,6 @@ return {
                 ["cmp.entry.get_documentation"] = true,
             },
         },
-        routes = {
-            {
-                filter = {
-                    event = 'notify',
-                },
-                opts = { skip = true },
-            },
-            {
-                filter = {
-                    event = 'msg_show.wmsg',
-                    kind = '',
-                    find = 'BOTTOM',
-                },
-                opts = { skip = true },
-            },
-            {
-                filter = {
-                    event = 'msg_show',
-                    kind = '',
-                },
-                opts = { skip = true },
-            },
-            {
-                view = 'notify',
-                filter = { event = 'msg_showmode' },
-            },
-        },
         presets = {
             bottom_search = true,         -- use a classic bottom cmdline for search
             command_palette = true,       -- position the cmdline and popupmenu together
