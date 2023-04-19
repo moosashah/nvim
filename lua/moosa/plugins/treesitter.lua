@@ -20,7 +20,6 @@ return {
     dependencies = {
         { 'windwp/nvim-ts-autotag' },
         { 'p00f/nvim-ts-rainbow' },
-        { 'lukas-reineke/indent-blankline.nvim'
-        },
+        { 'lukas-reineke/indent-blankline.nvim' },
     },
 }
