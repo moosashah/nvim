@@ -12,14 +12,14 @@ M.server_capabilities = function()
         format_item = function(item)
             return 'capabilites for: ' .. item
         end,
-        }, function(choice)
+    }, function(choice)
             print(
                 vim.inspect(
                     vim.lsp.get_active_clients()[active_client_map[choice]].server_capabilities.executeCommandProvider
                 )
             )
             vim.pretty_print(vim.lsp.get_active_clients()[active_client_map[choice]].server_capabilities)
-    end)
+        end)
 end
 
 require 'moosa.lsp.mason'

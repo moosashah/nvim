@@ -19,5 +19,5 @@ return {
             },
         },
     },
-	event = 'BufEnter',
+    event = 'BufEnter',
 }
