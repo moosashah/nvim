@@ -19,4 +19,5 @@ return {
             },
         },
     },
+	event = 'BufEnter',
 }
