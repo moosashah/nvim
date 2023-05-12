@@ -12,8 +12,13 @@ return {
 			sources = { 'nvim_diagnostic' },
 			colored = true,
 			update_in_insert = true,
-			always_visible = true,
-			icons_enabled = false,
+			always_visible = false,
+			symbols = {
+				error = ' ',
+				warn = ' ',
+				info = ' ',
+				hint = ' ',
+			},
 		}
 
 		local filename = {
@@ -26,11 +31,6 @@ return {
 			fmt = function(str)
 				return str:sub(1, 1)
 			end,
-		}
-
-		local ft = {
-			'filetype',
-			icons_enabled = true,
 		}
 
 		local lsp = {
@@ -111,8 +111,8 @@ return {
 			},
 			sections = {
 				lualine_a = { mode },
-				lualine_b = {},
-				lualine_c = { filename, diagnostics },
+				lualine_b = { filename },
+				lualine_c = { diagnostics },
 				lualine_x = {},
 				lualine_y = { lsp },
 				lualine_z = { 'location' },

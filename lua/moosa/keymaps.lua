@@ -33,3 +33,5 @@ keymap('v', '>', '>gv', opts)
 -- Move highlight up and down
 keymap('v', 'J', ':m \'>+1 <cr>gv=gv')
 keymap('v', 'K', ':m \'<-2 <cr>gv=gv')
+
+keymap('n', '<leader>l', '<cmd>Lazy<cr>', opts)
