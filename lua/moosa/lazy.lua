@@ -14,9 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 
 require('lazy').setup('moosa.plugins', {
-	defaults = {
-		lazy = true,
-	},
 	keys = {
 		{ '<leader>l', '<cmd>Lazy<CR>' },
 	},

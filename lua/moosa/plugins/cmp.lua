@@ -32,11 +32,6 @@ return {
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
         cmp.setup({
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body) -- For `luasnip` users.
-                end,
-            },
             mapping = cmp.mapping.preset.insert({
                 ['<C-k>'] = cmp.mapping.select_prev_item(),
                 ['<C-j>'] = cmp.mapping.select_next_item(),
@@ -51,45 +46,10 @@ return {
                 -- Set `select` to `false` to only confirm explicitly selected items.
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
-            formatting = {
-                fields = { 'kind', 'abbr', 'menu' },
-                format = function(entry, vim_item)
-                    vim_item.kind = kind_icons[vim_item.kind]
-                    vim_item.menu = ({
-                        nvim_lsp = 'LSP',
-                        luasnip = 'SNIP',
-                        buffer = 'BUF',
-                        path = 'PATH',
-                        emoji = 'EMO',
-                    })[entry.source.name]
-                    require('tailwindcss-colorizer-cmp').formatter(entry, vim_item)
-                    return vim_item
-                end,
-            },
-            sources = {
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-                { name = 'buffer' },
-                { name = 'path' },
-            },
             confirm_opts = {
                 behavior = cmp.ConfirmBehavior.Replace,
                 select = false,
             },
-            window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
-            },
-            experimental = {
-                ghost_text = false,
-            },
         })
     end,
-    dependencies = {
-        { 'hrsh7th/cmp-buffer' },
-        { 'hrsh7th/cmp-path' },
-        { 'saadparwaiz1/cmp_luasnip' },
-        { 'hrsh7th/cmp-nvim-lsp' },
-        { 'L3MON4D3/LuaSnip' },
-    },
 }

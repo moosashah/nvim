@@ -48,26 +48,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
--- Format on save
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-	group = vim.api.nvim_create_augroup('Format on save', { clear = true }),
-	callback = function()
-		local format = true
-		if format then
-			vim.lsp.buf.format({
-				filter = function(c)
-					local has_formatter = {
-						'tsserver',
-						'lua_ls',
-					}
-					for _, server in pairs(has_formatter) do
-						if c.name == server then
-							return false
-						end
-						return true
-					end
-				end,
-			})
-		end
-	end,
-})
