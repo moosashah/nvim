@@ -29,7 +29,7 @@ return {
         })
     end,
     keys = {
-        { '<leader>ff', ':Telescope find_files<CR>',                           silent = true },
+        { '<c-p>',      ':Telescope find_files<CR>',                           silent = true },
         { '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>' },
         { '<leader>fs', ':Telescope live_grep<CR>' },
         { '<leader>fk', ':Telescope keymaps<CR>' },

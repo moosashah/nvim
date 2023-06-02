@@ -45,10 +45,12 @@ return {
             },
             servers = {
                 ['lua_ls'] = { 'lua' },
-                ['null-ls'] = { 'typescript', 'typescriptreact', 'json' }
+                ['null-ls'] = { 'typescript', 'typescriptreact', 'json' },
+                ['gopls'] = { 'go', 'gomod', 'gowork', 'gotmpl' }
             }
         })
         local lspconfig = require('lspconfig')
+        local util = require('lspconfig/util')
 
         lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
         lspconfig.eslint.setup({
@@ -61,6 +63,11 @@ return {
                     command = "EslintFixAll",
                 })
             end,
+        })
+        lspconfig.gopls.setup({
+            cmd = { 'gopls' },
+            filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+            root_dir = util.root_pattern("go.work", "go.mod", ".git"),
         })
         vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
         lsp.setup()
