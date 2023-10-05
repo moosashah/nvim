@@ -18,6 +18,7 @@ return {
                 linehl = 'GitSignsChangeLn',
             },
         },
+        numhl = true,
     },
     event = 'BufEnter',
 }

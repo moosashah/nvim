@@ -45,7 +45,7 @@ return {
             },
             servers = {
                 ['lua_ls'] = { 'lua' },
-                ['null-ls'] = { 'typescript', 'typescriptreact', 'json' },
+                ['null-ls'] = { 'typescript', 'typescriptreact', 'json', 'javascript', 'javascriptreact', 'html' },
                 ['gopls'] = { 'go', 'gomod', 'gowork', 'gotmpl' }
             }
         })
@@ -69,6 +69,7 @@ return {
             filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
             root_dir = util.root_pattern("go.work", "go.mod", ".git"),
         })
+        lspconfig.tailwindcss.setup {}
         vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
         lsp.setup()
     end,

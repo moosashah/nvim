@@ -1,6 +1,8 @@
 return {
     'numToStr/Comment.nvim',
     config = function()
+        local ft = require('Comment.ft')
+        ft.set('go', '//%s')
         local comment = require 'Comment'
         comment.setup({
             pre_hook = function(ctx)

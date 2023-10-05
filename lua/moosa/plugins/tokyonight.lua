@@ -6,5 +6,6 @@ return {
         day_brightness = 0.3,
         hide_inactive_statusline = true,
         dim_inactive = true,
+        transparent = false,
     },
 }

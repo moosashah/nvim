@@ -12,9 +12,9 @@ return {
     ft = { "go", 'gomod' },
     build = ':lua require("go.install").update_all_sync()',
     keys = {
-        { '<leader>ja', ':GoAddTag<cr>',             silent = true },
-        { '<leader>jr', ':GoRmTag<cr>',              silent = true },
-        { '<leader>ie', 'o if err != nil { }<esc>i', silent = true },
-        { '<C-g>',      ':GoTest<cr>',               silent = true },
+        { '<leader>ja', ':GoAddTag<cr>',                silent = true },
+        { '<leader>jr', ':GoRmTag<cr>',                 silent = true },
+        { '<leader>ie', 'o if err != nil {<cr>}<esc>O', silent = true },
+        { '<C-g>',      ':GoTest<cr>',                  silent = true },
     },
 }
