@@ -45,7 +45,7 @@ return {
             },
             servers = {
                 ['lua_ls'] = { 'lua' },
-                ['null-ls'] = { 'typescript', 'typescriptreact', 'json', 'javascript', 'javascriptreact', 'html' },
+                ['null-ls'] = { 'typescript', 'typescriptreact', 'json', 'javascript', 'javascriptreact', 'html', 'astro' },
                 ['gopls'] = { 'go', 'gomod', 'gowork', 'gotmpl' }
             }
         })

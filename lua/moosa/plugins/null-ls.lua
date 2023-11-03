@@ -7,7 +7,9 @@ return {
         null_ls.setup({
             debug = false,
             sources = {
-                formatting.prettier,
+                formatting.prettier.with({
+                    extra_filetypes = { 'astro' },
+                }),
                 formatting.stylua,
             },
         })
