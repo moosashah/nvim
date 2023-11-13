@@ -12,7 +12,7 @@ function ColorMyPencils(color)
         rose_pine_dark = 'rose-pine',
         rose_pine_light = 'rose-pine-dawn',
     }
-    color = color or color_schemes.rose_pine_light
+    color = color or color_schemes.tokyonight_dark
     vim.cmd.colorscheme(color)
 end
 
