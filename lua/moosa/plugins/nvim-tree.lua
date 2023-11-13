@@ -1,6 +1,7 @@
 return {
 	'kyazdani42/nvim-tree.lua',
 	event = 'VimEnter',
+	commit = "9ef6c3cd8805d868d20106be09ce07f004e8232f",
 	config = function()
 		local status_ok, nvim_tree = pcall(require, 'nvim-tree')
 		if not status_ok then
