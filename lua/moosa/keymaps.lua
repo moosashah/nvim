@@ -34,4 +34,9 @@ keymap('v', '>', '>gv', opts)
 keymap('v', 'J', ':m \'>+1 <cr>gv=gv')
 keymap('v', 'K', ':m \'<-2 <cr>gv=gv')
 
-keymap('n', '<leader>l', '<cmd>Lazy<cr>', opts)
+keymap('n', '<leader>ll', '<cmd>Lazy<cr>', opts)
+
+keymap({ 'n', 'v' }, '<Right>', ':lua print("stop that")<cr>')
+keymap({ 'n', 'v' }, '<Left>', ':lua print("stop that")<cr>')
+keymap({ 'n', 'v' }, '<Up>', ':lua print("stop that")<cr>')
+keymap({ 'n', 'v' }, '<Down>', ':lua print("stop that")<cr>')
