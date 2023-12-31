@@ -1,5 +1,0 @@
-require 'moosa.lazy'
-require 'moosa.options'
-require 'moosa.keymaps'
-require 'moosa.autocommands'
-require 'moosa.functions'
