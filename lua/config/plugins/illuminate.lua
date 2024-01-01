@@ -4,7 +4,8 @@ return {
         require('illuminate').configure({
             filetypes_denylist = {
                 'alpha',
-                'NvimTree'
+                'NvimTree',
+                'TelescopePromp'
             },
         })
     end,
