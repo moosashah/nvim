@@ -39,7 +39,7 @@ return {
                 keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
                 keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
                 keymap('i', '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-                keymap('n', 'å', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+                keymap('n', '<M-a>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
                 keymap('n', '}', '<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>')
                 keymap('n', '{', '<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>')
                 keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>')
