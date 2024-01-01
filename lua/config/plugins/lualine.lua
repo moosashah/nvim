@@ -1,6 +1,6 @@
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'AndreM222/copilot-lualine' },
     config = function()
         local lualine = require('lualine')
 
@@ -98,7 +98,7 @@ return {
                 lualine_a = { mode },
                 lualine_b = { filename },
                 lualine_c = { 'diagnostics' },
-                lualine_x = {},
+                lualine_x = { { 'copilot', show_colors = true } },
                 lualine_y = { 'branch' },
                 lualine_z = { lsp },
             },
