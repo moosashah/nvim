@@ -88,6 +88,7 @@ return {
         lualine.setup({
             options = {
                 globalstatus = true,
+                theme = 'dracula',
                 disabled_filetypes = {
                     statusline = { 'alpha', 'dashboard' },
                     winbar = { 'alpha', 'dashboard' }
@@ -95,9 +96,10 @@ return {
             },
             sections = {
                 lualine_a = { mode },
-                lualine_c = { filename },
+                lualine_b = { filename },
+                lualine_c = { 'diagnostics' },
                 lualine_x = {},
-                lualine_y = {},
+                lualine_y = { 'branch' },
                 lualine_z = { lsp },
             },
         })
