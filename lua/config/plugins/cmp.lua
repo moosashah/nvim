@@ -15,6 +15,7 @@ return {
         local cmp_action = lsp_zero.cmp_action()
         cmp.setup({
             sources = {
+                { name = 'copilot' },
                 { name = 'luasnip' },
                 { name = 'nvim_lsp' },
                 { name = 'nvim_lua' },
@@ -29,7 +30,7 @@ return {
                 ['<C-b>'] = cmp_action.luasnip_jump_backward(),
                 ['<C-k>'] = cmp.mapping.select_prev_item(),
                 ['<C-j>'] = cmp.mapping.select_next_item(),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ['<CR>'] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
                 ['<Tab>'] = cmp_action.luasnip_supertab(),
                 ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
             }),
