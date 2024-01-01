@@ -13,11 +13,20 @@ keymap('v', '>', '>gv', opts)
 keymap('v', 'J', ':m \'>+1 <cr>gv=gv')
 keymap('v', 'K', ':m \'<-2 <cr>gv=gv')
 
+-- Better paste
+keymap('v', 'p', '"_dP', opts)
+
+-- Better j and k
+keymap({ 'n', 'x' }, 'j', 'gj', opts)
+keymap({ 'n', 'x' }, 'k', 'gk', opts)
+
 -- Center page on scroll
 keymap('n', '<C-d>', '<C-d>zz', opts)
 keymap('n', '<C-u>', '<C-u>zz', opts)
 keymap('n', 'n', 'nzz', opts)
 keymap('n', 'N', 'Nzz', opts)
+keymap('n', '*', '*zz', opts)
+keymap('n', '#', '#zz', opts)
 
 -- Clear highlights
 keymap('n', '<leader>h', vim.cmd.nohlsearch, opts)
