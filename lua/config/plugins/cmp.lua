@@ -12,10 +12,16 @@ return {
 
         require('luasnip.loaders.from_vscode').lazy_load()
         local cmp = require('cmp')
+        cmp.event:on('menu_opened', function()
+            vim.b.copilot_suggestion_hidden = true
+        end)
+
+        cmp.event:on('menu_closed', function()
+            vim.b.copilot_suggestion_hidden = false
+        end)
         local cmp_action = lsp_zero.cmp_action()
         cmp.setup({
             sources = {
-                { name = 'copilot' },
                 { name = 'luasnip' },
                 { name = 'nvim_lsp' },
                 { name = 'nvim_lua' },
