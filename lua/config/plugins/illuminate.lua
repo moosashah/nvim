@@ -5,7 +5,7 @@ return {
             filetypes_denylist = {
                 'alpha',
                 'NvimTree',
-                'TelescopePromp'
+                'TelescopePrompt'
             },
         })
     end,
