@@ -2,6 +2,7 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 keymap('n', '<leader>ll', vim.cmd.Lazy, opts)
+keymap('n', '<leader>lp', '<cmd>Lazy profile<CR>', opts)
 
 -- Visual --
 -- Stay in indent mode
