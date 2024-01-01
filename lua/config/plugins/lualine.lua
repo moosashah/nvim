@@ -95,9 +95,10 @@ return {
             },
             sections = {
                 lualine_a = { mode },
-                lualine_b = { filename },
-                lualine_c = { "diagnostics" },
-                lualine_y = { lsp },
+                lualine_c = { filename },
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = { lsp },
             },
         })
     end,
