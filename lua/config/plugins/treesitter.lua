@@ -16,6 +16,13 @@ return {
         end
     },
     {
-        'nvim-treesitter/nvim-treesitter-context'
+        'nvim-treesitter/nvim-treesitter-context',
+        event = 'BufEnter',
+        opts = {
+            multiline_threshold = 3,
+        },
+        keys = {
+            { '<leader>tc', vim.cmd.TSContextToggle },
+        },
     }
 }
