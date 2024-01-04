@@ -1,8 +1,10 @@
 return {
     'folke/tokyonight.nvim',
     priority = 1000,
-    opts = {},
+    opts = {
+        day_brightness = 0.3,
+    },
     config = function()
-        vim.cmd.colorscheme('tokyonight-moon')
+        vim.cmd.colorscheme('tokyonight-day')
     end
 }
