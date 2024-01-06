@@ -5,6 +5,6 @@ return {
         day_brightness = 0.3,
     },
     config = function()
-        vim.cmd.colorscheme('tokyonight-day')
+        vim.cmd.colorscheme('tokyonight-moon')
     end
 }
