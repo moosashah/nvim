@@ -99,7 +99,7 @@ return {
                 lualine_b = { filename },
                 lualine_c = { 'diagnostics' },
                 lualine_x = { { 'copilot', show_colors = true } },
-                lualine_y = { 'branch' },
+                lualine_y = {},
                 lualine_z = { lsp },
             },
         })
