@@ -1,3 +1,18 @@
+function FixPath()
+    local path = vim.fn.expand('%:p:h')
+    local parts = {}
+    for part in string.gmatch(path, '([^/]+)') do
+        table.insert(parts, part)
+    end
+    local new_path = "/"
+    --/Users/me/project/repo/services|packages|local/module
+    for i = 1, 6 do
+        new_path = new_path .. parts[i] .. "/"
+    end
+    print(new_path)
+    return new_path
+end
+
 return {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -28,6 +43,11 @@ return {
     end,
     keys = {
         { '<c-p>',      ':Telescope find_files<CR>',                            silent = true },
+        {
+            '<leader>ff',
+            '<cmd>lua  require("telescope.builtin").find_files({ cwd = FixPath() })<cr>',
+            silent = true
+        },
         { '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>', silent = true },
         { '<leader>fs', ':Telescope live_grep<CR>',                             silent = true },
         { '<leader>fk', ':Telescope keymaps<CR>',                               silent = true },
