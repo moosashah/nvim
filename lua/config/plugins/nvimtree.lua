@@ -13,6 +13,6 @@ return {
         }
     end,
     keys = {
-        { '<leader>e', vim.cmd.NvimTreeToggle }
+        { '<leader>e', vim.cmd.NvimTreeFindFileToggle }
     }
 }
