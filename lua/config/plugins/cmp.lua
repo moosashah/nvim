@@ -22,8 +22,8 @@ return {
         local cmp_action = lsp_zero.cmp_action()
         cmp.setup({
             sources = {
-                { name = 'luasnip' },
                 { name = 'nvim_lsp' },
+                { name = 'luasnip' },
                 { name = 'nvim_lua' },
                 { name = 'path' },
             },
