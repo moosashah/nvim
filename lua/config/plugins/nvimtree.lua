@@ -10,6 +10,10 @@ return {
                     quit_on_open = true,
                 },
             },
+            view = {
+                side = "right",
+                width = 50,
+            }
         }
     end,
     keys = {
