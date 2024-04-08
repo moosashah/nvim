@@ -2,15 +2,11 @@ return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-        'L3MON4D3/LuaSnip',
-        "rafamadriz/friendly-snippets",
-        'saadparwaiz1/cmp_luasnip'
     },
     config = function()
         local lsp_zero = require('lsp-zero')
         lsp_zero.extend_cmp()
 
-        require('luasnip.loaders.from_vscode').lazy_load()
         local cmp = require('cmp')
         cmp.event:on('menu_opened', function()
             vim.b.copilot_suggestion_hidden = true
@@ -23,7 +19,6 @@ return {
         cmp.setup({
             sources = {
                 { name = 'nvim_lsp' },
-                { name = 'luasnip' },
                 { name = 'nvim_lua' },
                 { name = 'path' },
             },
