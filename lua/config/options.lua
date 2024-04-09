@@ -18,4 +18,3 @@ vim.opt.ruler = false
 vim.opt.incsearch = true
 vim.opt.inccommand = 'split'
 vim.opt.iskeyword:append('-')
-vim.cmd("Copilot disable")
