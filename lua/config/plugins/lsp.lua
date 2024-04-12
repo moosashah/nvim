@@ -31,11 +31,8 @@ return {
                     local opts = { noremap = true, silent = true }
                     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
                 end
-                keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
                 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-                keymap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
                 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-                keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>')
                 keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
                 keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
                 keymap('i', '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
@@ -43,7 +40,6 @@ return {
                 keymap('n', '}', '<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>')
                 keymap('n', '{', '<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>')
                 keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>')
-                keymap('n', '<leader>lq', '<cmd>lua vim.diagnostic.setloclist()<CR>')
             end)
             lsp.format_on_save({
                 format_opts = {
