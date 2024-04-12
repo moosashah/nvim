@@ -31,9 +31,7 @@ return {
                     local opts = { noremap = true, silent = true }
                     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
                 end
-                keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
                 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-                keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
                 keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
                 keymap('i', '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
                 keymap('n', '<M-a>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
