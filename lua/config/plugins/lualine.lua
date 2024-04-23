@@ -88,7 +88,7 @@ return {
         lualine.setup({
             options = {
                 globalstatus = true,
-                theme = 'dracula',
+                theme = 'tokyonight',
                 disabled_filetypes = {
                     statusline = { 'alpha', 'dashboard' },
                     winbar = { 'alpha', 'dashboard' }
