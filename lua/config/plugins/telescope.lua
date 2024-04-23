@@ -50,6 +50,7 @@ return {
         },
         { '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>', silent = true },
         { '<leader>fs', ':Telescope live_grep<CR>',                             silent = true },
+        { '<leader>ft', ':Telescope live_grep<CR>TODO',                         silent = true },
         { '<leader>fk', ':Telescope keymaps<CR>',                               silent = true },
         { 'gd',         ':Telescope lsp_definitions<CR>',                       silent = true },
         { 'gr',         ':Telescope lsp_references<CR>',                        silent = true },
