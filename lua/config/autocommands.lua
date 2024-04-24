@@ -22,3 +22,15 @@ vim.api.nvim_create_autocmd({ 'TextYankPost' }, {
         vim.highlight.on_yank({ higroup = 'Visual', timeout = 100 })
     end,
 })
+
+vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
+    callback = function()
+        vim.cmd 'set cursorcolumn'
+    end,
+})
+
+vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+    callback = function()
+        vim.cmd 'set nocursorcolumn'
+    end,
+})

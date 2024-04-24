@@ -3,9 +3,9 @@ vim.opt.cursorline = true
 vim.opt.expandtab = true          -- convert tabs to spaces
 vim.opt.hlsearch = true           -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true         -- ignore case in search patterns
+vim.opt.guicursor = "n-v-c-i-sm:block,ci-ve:ver25,r-cr-o:hor20"
 vim.opt.inccommand = 'split'
 vim.opt.incsearch = true
-vim.opt.iskeyword:append('-')
 vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = true
 vim.opt.ruler = false
