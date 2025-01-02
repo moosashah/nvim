@@ -1,3 +1,5 @@
+-- needed to make bun hot reloading work for local dev
+vim.opt.backupcopy = 'yes'
 vim.opt.clipboard = 'unnamedplus' -- allows neovim to access the system clipboard
 vim.opt.cursorline = true
 vim.opt.expandtab = true          -- convert tabs to spaces
@@ -21,3 +23,4 @@ vim.opt.splitright = true
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
 vim.opt.undofile = true      -- enable persistent undo
+vim.opt.background = "dark"
