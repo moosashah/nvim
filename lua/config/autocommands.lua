@@ -34,3 +34,10 @@ vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
         vim.cmd 'set nocursorcolumn'
     end,
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { ".env.*" }, -- This will match .env.local, .env.development, etc.
+    callback = function()
+        vim.bo.filetype = "sh" -- or "bash"
+    end,
+})
