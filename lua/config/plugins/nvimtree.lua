@@ -11,8 +11,11 @@ return {
                 },
             },
             view = {
-                side = "right",
+                side = "left",
                 width = 50,
+                float = {
+                    enable = true
+                },
             }
         }
     end,
