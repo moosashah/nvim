@@ -36,8 +36,15 @@ vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = { ".env.*" }, -- This will match .env.local, .env.development, etc.
+    pattern = { ".env.*" },    -- This will match .env.local, .env.development, etc.
     callback = function()
         vim.bo.filetype = "sh" -- or "bash"
+    end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { "Dockerfile.pr" },
+    callback = function()
+        vim.bo.filetype = "dockerfile"
     end,
 })
