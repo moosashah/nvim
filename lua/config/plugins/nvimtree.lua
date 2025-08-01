@@ -12,7 +12,7 @@ return {
             },
             view = {
                 side = "left",
-                width = 50,
+                -- width = 500,
                 float = {
                     enable = true
                 },

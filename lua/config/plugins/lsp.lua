@@ -38,6 +38,7 @@ return {
                 keymap('n', '}', '<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>')
                 keymap('n', '{', '<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>')
                 keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>')
+                keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
             end)
             lsp.format_on_save({
                 format_opts = {
@@ -53,11 +54,25 @@ return {
             })
 
             require('mason-lspconfig').setup({
-                ensure_install = { 'tsserver', "gopls", "lua_ls" },
+                ensure_install = { 'ts_ls', "gopls", "lua_ls" },
                 handlers = {
                     lsp.default_setup,
                     lua_ls = function()
                         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+                    end,
+                    ts_ls = function()
+                        require('lspconfig').ts_ls.setup({
+                            on_init = function(client)
+                                -- Send didChangeConfiguration notification
+                                client.notify("workspace/didChangeConfiguration", {
+                                    settings = {
+                                        diagnostics = {
+                                            ignoredCodes = { 80004 }
+                                        }
+                                    }
+                                })
+                            end,
+                        })
                     end,
                     eslint = function()
                         require('lspconfig').eslint.setup(

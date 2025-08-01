@@ -4,6 +4,8 @@ local opts = { silent = true }
 keymap('n', '<leader>ll', vim.cmd.Lazy, opts)
 keymap('n', '<leader>lp', '<cmd>Lazy profile<CR>', opts)
 
+vim.keymap.del({ 'n', 'x' }, '[%')
+vim.keymap.del({ 'n', 'x' }, ']%')
 -- Visual --
 -- Stay in indent mode
 keymap('v', '<', '<gv', opts)

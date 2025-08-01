@@ -45,9 +45,11 @@ return {
         { '<c-p>',      ':Telescope find_files<CR>',                            silent = true },
         {
             '<leader>ff',
+            -- need to fix it so that it works for osc
             '<cmd>lua  require("telescope.builtin").find_files({ cwd = FixPath() })<cr>',
             silent = true
         },
+        -- just make this work for env files in mono repo rather than for all files
         { '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>', silent = true },
         { '<leader>fs', ':Telescope live_grep<CR>',                             silent = true },
         { '<leader>ft', ':Telescope live_grep<CR>TODO',                         silent = true },
