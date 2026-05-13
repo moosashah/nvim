@@ -53,7 +53,7 @@ return {
         { '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>', silent = true },
         { '<leader>fs', ':Telescope live_grep<CR>',                             silent = true },
         { 'gd',         ':Telescope lsp_definitions<CR>',                       silent = true },
-        { 'gr',         ':Telescope lsp_references<CR>',                        silent = true },
+        -- { 'gr',         ':Telescope lsp_references<CR>',                        silent = true },
         { '<leader>fh', ':Telescope help_tags<CR>',                             silent = true },
         { '<leader>fz', ':Telescope grep_string<CR>',                           silent = true },
     },
