@@ -1,6 +1,5 @@
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'AndreM222/copilot-lualine' },
     config = function()
         local lualine = require('lualine')
 
@@ -63,7 +62,7 @@ return {
 
                 -- add client
                 for _, client in pairs(buf_clients) do
-                    if client.name ~= 'null-ls' and client.name ~= 'copilot' then
+                    if client.name ~= 'null-ls' then
                         table.insert(buf_client_names, client.name)
                     end
                 end
@@ -98,7 +97,7 @@ return {
                 lualine_a = { mode },
                 lualine_b = { filename },
                 lualine_c = { 'diagnostics' },
-                lualine_x = { { 'copilot', show_colors = true } },
+                lualine_x = {},
                 lualine_y = {},
                 lualine_z = { lsp },
             },
