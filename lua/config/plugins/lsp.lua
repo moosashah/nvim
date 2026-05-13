@@ -1,92 +1,79 @@
 return {
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        lazy = true,
-        config = false,
-        init = function()
-            vim.g.lsp_extend_cmp = 0
-            vim.g.lsp_extend_lspconfig = 0
-        end
-    },
-    {
-        'williamboman/mason.nvim',
-        lazy = false,
-        config = true,
-    },
-    {
-        'neovim/nvim-lspconfig',
-        cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
-        event = { 'BufReadPre', 'BufNewFile' },
-        dependencies = {
-            'hrsh7th/cmp-nvim-lsp',
-            'williamboman/mason-lspconfig.nvim',
-        },
-        config = function()
-            local lsp = require('lsp-zero')
-            lsp.extend_lspconfig()
+	{
+		'williamboman/mason.nvim',
+		lazy = false,
+		config = true,
+	},
+	{
+		'williamboman/mason-lspconfig.nvim',
+		dependencies = { 'williamboman/mason.nvim' },
+		opts = {
+			ensure_installed = { 'gopls', 'lua_ls' },
+			automatic_enable = { exclude = { 'ts_ls' } },
+		},
+	},
+	{
+		'neovim/nvim-lspconfig',
+		event = { 'BufReadPre', 'BufNewFile' },
+		dependencies = {
+			'saghen/blink.cmp',
+			'williamboman/mason-lspconfig.nvim',
+		},
+		config = function()
+			vim.lsp.config('*', {
+				capabilities = require('blink.cmp').get_lsp_capabilities(),
+			})
 
-            lsp.on_attach(function(_, bufnr)
-                local function keymap(mode, lhs, rhs)
-                    local opts = { noremap = true, silent = true }
-                    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
-                end
-                keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-                keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
-                keymap('i', '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-                keymap('n', '<M-a>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-                keymap('n', '}', '<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>')
-                keymap('n', '{', '<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>')
-                keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>')
-                keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-            end)
-            lsp.format_on_save({
-                format_opts = {
-                    async = false,
-                    timeout_ms = 10000,
-                },
-                servers = {
-                    ['lua_ls'] = { 'lua' },
-                    ['null-ls'] = { 'typescript', 'typescriptreact', 'json', 'javascript',
-                        'javascriptreact', 'html', 'astro' },
-                    ['gopls'] = { 'go', 'gomod', 'gowork', 'gotmpl' }
-                }
-            })
+			vim.lsp.config('lua_ls', {
+				settings = {
+					Lua = {
+						runtime = { version = 'LuaJIT' },
+						workspace = {
+							checkThirdParty = false,
+							library = { vim.env.VIMRUNTIME },
+						},
+					},
+				},
+			})
 
-            require('mason-lspconfig').setup({
-                ensure_install = { 'ts_ls', "gopls", "lua_ls" },
-                handlers = {
-                    lsp.default_setup,
-                    lua_ls = function()
-                        require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-                    end,
-                    ts_ls = function() end, -- disabled in favor of tsgo
-                    eslint = function() end, -- disabled in favor of oxlint
-                }
-            })
+			vim.lsp.config('oxlint', {
+				cmd = { 'oxlint', '--lsp' },
+				filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+				root_markers = { '.oxlintrc.json', 'oxlint.config.ts', 'package.json' },
+			})
 
-            local configs = require('lspconfig.configs')
-            if not configs.tsgo then
-                configs.tsgo = {
-                    default_config = {
-                        cmd = { 'tsgo', '--lsp', '--stdio' },
-                        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
-                        root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json'),
-                        single_file_support = true,
-                    },
-                }
-            end
-            require('lspconfig').tsgo.setup({})
+			vim.lsp.enable({ 'gopls', 'lua_ls', 'oxlint', 'tsgo' })
 
-            require('lspconfig').oxlint.setup({
-                cmd = { 'oxlint', '--lsp' },
-                root_dir = require('lspconfig.util').root_pattern(
-                    '.oxlintrc.json',
-                    'oxlint.config.ts',
-                    'package.json'
-                ),
-                single_file_support = true,
-            })
-        end
-    },
+			vim.api.nvim_create_autocmd('LspAttach', {
+				callback = function(ev)
+					local map = function(mode, lhs, rhs)
+						vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, silent = true })
+					end
+					-- map('n', 'K', vim.lsp.buf.hover)
+					map('n', 'gl', vim.diagnostic.open_float)
+					-- map('i', '<C-h>', vim.lsp.buf.signature_help)
+					-- map('n', '<M-a>', vim.lsp.buf.code_action)
+					map('n', '}', function()
+						vim.diagnostic.jump({ count = 1 })
+					end)
+					map('n', '{', function()
+						vim.diagnostic.jump({ count = -1 })
+					end)
+					-- map('n', '<leader>lr', vim.lsp.buf.rename)
+					-- map('n', '<leader>lf', function()
+					-- 	require('conform').format({ async = false, timeout_ms = 5000 })
+					-- end)
+					-- map('n', 'gi', vim.lsp.buf.implementation)
+					-- map('n', 'gr', vim.lsp.buf.references)
+				end,
+			})
+
+			vim.diagnostic.config({
+				virtual_text = true,
+				underline = true,
+				update_in_insert = true,
+				severity_sort = true,
+			})
+		end,
+	},
 }
