@@ -60,37 +60,32 @@ return {
                     lua_ls = function()
                         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
                     end,
-                    ts_ls = function()
-                        require('lspconfig').ts_ls.setup({
-                            on_init = function(client)
-                                -- Send didChangeConfiguration notification
-                                client.notify("workspace/didChangeConfiguration", {
-                                    settings = {
-                                        diagnostics = {
-                                            ignoredCodes = { 80004 }
-                                        }
-                                    }
-                                })
-                            end,
-                        })
-                    end,
-                    eslint = function()
-                        require('lspconfig').eslint.setup(
-                            {
-                                settings = {
-                                    packageManager = 'yarn'
-                                },
-                                on_attach = function(_, bufnr)
-                                    vim.api.nvim_create_autocmd("BufWritePre", {
-                                        buffer = bufnr,
-                                        command = "EslintFixAll",
-                                    })
-                                end,
-
-                            }
-                        )
-                    end,
+                    ts_ls = function() end, -- disabled in favor of tsgo
+                    eslint = function() end, -- disabled in favor of oxlint
                 }
+            })
+
+            local configs = require('lspconfig.configs')
+            if not configs.tsgo then
+                configs.tsgo = {
+                    default_config = {
+                        cmd = { 'tsgo', '--lsp', '--stdio' },
+                        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+                        root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json'),
+                        single_file_support = true,
+                    },
+                }
+            end
+            require('lspconfig').tsgo.setup({})
+
+            require('lspconfig').oxlint.setup({
+                cmd = { 'oxlint', '--lsp' },
+                root_dir = require('lspconfig.util').root_pattern(
+                    '.oxlintrc.json',
+                    'oxlint.config.ts',
+                    'package.json'
+                ),
+                single_file_support = true,
             })
         end
     },

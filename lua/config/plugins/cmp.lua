@@ -4,10 +4,6 @@ return {
     dependencies = {
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
-        {
-            "zbirenbaum/copilot-cmp",
-            config = true
-        },
     },
     config = function()
         local lsp_zero = require('lsp-zero')
@@ -18,7 +14,6 @@ return {
         local cmp_action = lsp_zero.cmp_action()
         cmp.setup({
             sources = {
-                { name = 'copilot' },
                 { name = 'nvim_lsp' },
                 { name = 'nvim_lua' },
                 { name = 'path' },

@@ -25,3 +25,5 @@ vim.opt.termguicolors = true -- set term gui colors (most terminals support this
 vim.opt.undofile = true      -- enable persistent undo
 vim.opt.background = "dark"
 vim.cmd.colorscheme "catppuccin"
+vim.opt.mouse = ""
+vim.opt.winborder = 'double'
