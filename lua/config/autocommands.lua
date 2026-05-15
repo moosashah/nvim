@@ -46,9 +46,10 @@ vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
 
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = { ".env.*" },    -- This will match .env.local, .env.development, etc.
+    pattern = { ".env", ".env.*" },
     callback = function()
-        vim.bo.filetype = "sh" -- or "bash"
+        vim.bo.filetype = "sh"
+        vim.bo.commentstring = "# %s"
     end,
 })
 
