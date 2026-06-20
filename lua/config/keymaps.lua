@@ -18,7 +18,7 @@ keymap('n', '<C-g>', function()
 		return
 	end
 
-	local command = 'pnpm turbo typecheck lint build --filter=ohana'
+	local command = 'pnpm turbo typecheck lint --filter=ohana'
 	local pane_id = vim.fn.system('tmux split-window -P -F "#{pane_id}" -v -l 40% -c ' .. vim.fn.shellescape(monorepo))
 	pane_id = vim.trim(pane_id)
 	vim.fn.system('tmux send-keys -t ' .. vim.fn.shellescape(pane_id) .. ' ' .. vim.fn.shellescape(command) .. ' C-m')

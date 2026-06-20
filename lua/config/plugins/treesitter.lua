@@ -9,6 +9,7 @@ local parser_languages = {
 	'lua',
 	'markdown',
 	'markdown_inline',
+	'prisma',
 	-- 'ocaml',
 	-- 'ocaml_interface',
 	-- 'rust',

@@ -42,7 +42,13 @@ return {
 				root_markers = { '.oxlintrc.json', 'oxlint.config.ts', 'package.json' },
 			})
 
-			vim.lsp.enable({ 'gopls', 'lua_ls', 'oxlint', 'tsgo' })
+			vim.lsp.enable({
+				'gopls',
+				'lua_ls',
+				'oxlint',
+				'tsgo',
+				'osc_tailwind',
+			})
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(ev)
